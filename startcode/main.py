@@ -26,9 +26,20 @@ class SokobanApp:
             
             elif event.type == pygame.KEYDOWN:
                 # TODO OEFENING 2: Implementeer keyboard input
-                pass
+                if event.key == pygame.K_LEFT:
+                    self.game.bericht = self.game.beweeg_speler(-1, 0)
+                elif event.key == pygame.K_RIGHT:
+                    self.game.bericht = self.game.beweeg_speler(1, 0)
+                elif event.key == pygame.K_UP:
+                    self.game.bericht = self.game.beweeg_speler(0, -1)
+                elif event.key == pygame.K_DOWN:
+                    self.game.bericht = self.game.beweeg_speler(0, 1)
+                elif event.key == pygame.K_r:
+                    self.game.laad_level(self.game.huidig_level)
+                elif event.key == pygame.K_n:
+                    if self.game.gewonnen:
+                        self.game.volgend_level()
 
-    
     def teken(self):
         """Teken alles op het scherm."""
         self.scherm.fill(COLORS["zwart"])

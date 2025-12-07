@@ -5,9 +5,10 @@ from config import TILE_SIZE, COLORS
 
 class Speler(GameObject):
     """Speler klasse, erft van GameObject"""
-    
+    def __init__(self, x:int, y:int):
+        super().__init__(x,y,COLORS["speler"])
     # TODO OEFENING 1: Roep parent constructor aan met super()
-    
+
 
     def teken(self, scherm: pygame.Surface):
         """ Teken de speler op het scherm. Overschrijft GameObject.teken() en tekent een cirkel"""
